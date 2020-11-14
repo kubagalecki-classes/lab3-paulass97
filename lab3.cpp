@@ -8,10 +8,10 @@ class Figura
 {
 public:
     // Zad 2.
-    void   setP(double p) { pole = p; }
+    // void   setP(double p) { pole = p; }
     double getP() { return pole; }
 
-private:
+protected:
     double pole;
 };
 
@@ -21,7 +21,8 @@ class Kolo : public Figura
 public:
     Kolo(double r)
     {
-        setP(3.142 * r * r);
+        // setP(3.142 * r * r);
+        pole = 3.142 * r * r;
         cout << getP() << endl;
     }
 };
@@ -31,7 +32,8 @@ class Kwadrat : public Figura
 public:
     Kwadrat(double a)
     {
-        setP(a * a);
+        // setP(a * a);
+        pole = a * a;
         cout << getP() << endl;
     }
 };
