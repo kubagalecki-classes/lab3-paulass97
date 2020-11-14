@@ -11,7 +11,7 @@ public:
     void   setP(double p) { pole = p; }
     double getP() { return pole; }
 
-public:
+private:
     double pole;
 };
 
@@ -21,8 +21,8 @@ class Kolo : public Figura
 public:
     Kolo(double r)
     {
-        pole = 3.142 * r * r;
-        cout << pole << endl;
+        setP(3.142 * r * r);
+        cout << getP() << endl;
     }
 };
 
@@ -31,7 +31,10 @@ class Kwadrat : public Figura
 public:
     Kwadrat(double a)
     {
-        pole = a * a;
-        cout << pole << endl;
+        setP(a * a);
+        cout << getP() << endl;
     }
 };
+
+int main()
+{}
