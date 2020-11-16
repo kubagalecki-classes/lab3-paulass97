@@ -8,8 +8,10 @@ class Figura
 public:
     // void   setP(double p) { pole = p; }
     double getP() { return pole; }
+    Figura(double p) : pole(p){};
 
     virtual void id() { cout << "Pole figury: " << getP() << endl; };
+    virtual ~Figura() { cout << "Figura została zniszczona" << endl; }
 
 protected:
     // private:
@@ -21,12 +23,13 @@ class Kolo : public Figura
 public:
     void id() override { cout << "Pole koła: " << getP() << endl; }
 
-    Kolo(double r) : Figura{}
+    Kolo(double r) : Figura(3.142 * r * r)
     {
         // setP(3.142 * r * r);
-        pole = 3.142 * r * r;
+        cout << pole << endl;
         // cout << getP() << endl;
     }
+    virtual ~Kolo() { cout << "kolo zostało zniszczone" << endl; }
 };
 
 class Kwadrat : public Figura
@@ -34,12 +37,14 @@ class Kwadrat : public Figura
 public:
     void id() override { cout << "Pole kwadratu: " << getP() << endl; }
 
-    Kwadrat(double a) : Figura{}
+    Kwadrat(double a) : Figura(a * a)
     {
+        cout << pole << endl;
         // setP(a * a);
-        pole = a * a;
+        // pole = a * a;
         // cout << getP() << endl;
     }
+    virtual ~Kwadrat() { cout << "Kwadrat został zniszczony" << endl; }
 };
 
 void id(const Figura&);
@@ -56,4 +61,5 @@ int main()
     kw->id();
     // Kolo*    ko = dynamic_cast< Kolo* >(f);
     // ko->id();
+    delete f;
 }
