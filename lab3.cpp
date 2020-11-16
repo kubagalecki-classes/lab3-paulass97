@@ -3,40 +3,49 @@
 
 using namespace std;
 
-// Zad 1.
 class Figura
 {
 public:
-    // Zad 2.
     // void   setP(double p) { pole = p; }
     double getP() { return pole; }
 
+    void id() { cout << "Pole figury: " << getP() << endl; };
+
 protected:
+    // private:
     double pole;
 };
 
-// Zad 3. Zad 4.
 class Kolo : public Figura
 {
 public:
-    Kolo(double r)
+    void id() { cout << "Pole koła: " << getP() << endl; }
+    Kolo(double r) : Figura{}
     {
         // setP(3.142 * r * r);
         pole = 3.142 * r * r;
-        cout << getP() << endl;
+        // cout << getP() << endl;
     }
 };
 
 class Kwadrat : public Figura
 {
 public:
-    Kwadrat(double a)
+    void id() { cout << "Pole kwadratu: " << getP() << endl; }
+    Kwadrat(double a) : Figura{}
     {
         // setP(a * a);
         pole = a * a;
-        cout << getP() << endl;
+        // cout << getP() << endl;
     }
 };
 
+void id(const Figura&);
+
 int main()
-{}
+{
+    Kwadrat kwadrat(2);
+    kwadrat.id();
+    Figura kwadrat1 = static_cast< Figura >(kwadrat);
+    kwadrat1.id();
+}
