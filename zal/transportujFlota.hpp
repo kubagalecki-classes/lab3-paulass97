@@ -15,12 +15,11 @@ unsigned int transportujFlota(unsigned int towar)
     Stocznia stocznia{};
     Statek* s1 = stocznia();
     towar = s1 -> transportuj();
-    suma+ = towar; 
+    suma = suma+towar; 
     Zaglowiec* suma_zaglowcow = dynamic_cast<Zaglowiec* >(s1);
-    suma_zaglowcow+=Zaglowiec;
+    suma_zaglowcow=suma_zaglowcow+1;
     
     delete s1;
         }
     }
-    return 0;
 }
