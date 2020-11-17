@@ -6,7 +6,6 @@ unsigned int transportujFlota(unsigned int towar)
 {
     int suma = 0; 
     int suma_zaglowcow = 0;
-    int z;
     
     if(towar==0)
     {
@@ -19,9 +18,9 @@ unsigned int transportujFlota(unsigned int towar)
     Statek* s1 = stocznia();
     towar = s1 -> transportuj();
     suma = suma+towar; 
-    Zaglowiec* z = dynamic_cast<Zaglowiec* >(s1);
-    suma_zaglowcow=suma_zaglowcow+z;
-    
+    while(dynamic_cast<Zaglowiec*>(s1)){
+    suma_zaglowcow=suma_zaglowcow+1;
+    }
     delete s1;
         }
         return suma_zaglowcow;
