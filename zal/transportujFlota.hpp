@@ -18,7 +18,7 @@ unsigned int transportujFlota(unsigned int towar)
     Statek* s1 = stocznia();
     towar = s1 -> transportuj();
     suma = suma+towar; 
-    while(dynamic_cast<Zaglowiec*>(s1)){
+    if(dynamic_cast<Zaglowiec*>(s1)){
     suma_zaglowcow=suma_zaglowcow+1;
     }
     delete s1;
